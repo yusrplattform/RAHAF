@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 const navItems = [
-  { path: '/', label: 'لوحة التحكم', icon: '📊', exact: true },
+  { path: '/dashboard', label: 'لوحة التحكم', icon: '📊', exact: true },
   { path: '/companies', label: 'الخدمات', icon: '🧩' },
   { path: '/income', label: 'الدخل', icon: '💰' },
   { path: '/expenses', label: 'المصروفات', icon: '📉' },

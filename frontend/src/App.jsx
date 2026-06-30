@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar'
 import Header from './components/Header'
 
 // Pages
+import PublicProfile from './pages/PublicProfile'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Companies from './pages/Companies'
@@ -18,6 +19,7 @@ import Tasks from './pages/Tasks'
 import Reports from './pages/Reports'
 
 const pageTitles = {
+  '/dashboard': 'لوحة التحكم',
   '/': 'لوحة التحكم',
   '/companies': 'الخدمات',
   '/income': 'الدخل',
@@ -66,7 +68,7 @@ function AppLayout() {
         />
         <main className="page-content">
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/companies" element={<Companies />} />
             <Route path="/income" element={<Income />} />
             <Route path="/expenses" element={<Expenses />} />
@@ -98,6 +100,7 @@ export default function App() {
           }}
         />
         <Routes>
+          <Route path="/" element={<PublicProfile />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/*"

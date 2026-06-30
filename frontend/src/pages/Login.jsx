@@ -95,7 +95,7 @@ export default function Login() {
       const { access_token, user } = res.data
       login(access_token, user)
       toast.success(`مرحباً ${user.name || 'بك'} 👋`)
-      navigate('/')
+      navigate('/dashboard')
     } catch (err) {
       const msg = err.response?.data?.detail || err.response?.data?.message || 'خطأ في البريد الإلكتروني أو كلمة المرور'
       setError(msg)
