@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="رهف السيابية - شريك تطوير الأعمال ونمو الشركات في سلطنة عمان | Rahaf Al Siyabi - Business Development & Growth Partner in Oman" />
+  <meta name="keywords" content="تطوير الأعمال, المبيعات, عمان, Business Development, Oman, Growth Partner, CRM, Operations" />
+  <meta property="og:title" content="رهف السيابية | شريك تطوير الأعمال" />
+  <meta property="og:description" content="أساعد الشركات على تنظيم أعمالها، تطوير مبيعاتها، وبناء أنظمة داخلية تدعم النمو." />
+  <meta property="og:type" content="website" />
+  <title>رهف السيابية | Rahaf Al Siyabi — Business Development & Growth Partner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --navy:        #0f1f3d;
+      --navy-light:  #1a3260;
+      --blue:        #2563eb;
+      --blue-light:  #3b82f6;
+      --accent:      #0ea5e9;
+      --gold:        #d4a843;
+      --white:       #ffffff;
+      --gray-50:     #f8fafc;
+      --gray-100:    #f1f5f9;
+      --gray-200:    #e2e8f0;
+      --gray-400:    #94a3b8;
+      --gray-600:    #475569;
+      --gray-800:    #1e293b;
+      --green:       #10b981;
+      --radius:      12px;
+      --radius-lg:   20px;
+      --shadow:      0 4px 24px rgba(15,31,61,0.10);
+      --shadow-lg:   0 12px 48px rgba(15,31,61,0.18);
+      --transition:  0.3s cubic-bezier(.4,0,.2,1);
+      --font-ar:     'Cairo', sans-serif;
+      --font-en:     'Inter', sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ar);
+      background: var(--white);
+      color: var(--gray-800);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    body.lang-en {
+      font-family: var(--font-en);
+      direction: ltr;
+      text-align: left;
+    }
+    body.lang-ar {
+      font-family: var(--font-ar);
+      direction: rtl;
+      text-align: right;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== UTILITY ===== */
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-alt { background: var(--gray-50); }
+    .section-dark { background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%); color: var(--white); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .text-center { text-align: center; }
+    .text-center-always { text-align: center !important; }
+    .mt-4 { margin-top: 16px; }
+    .mt-8 { margin-top: 32px; }
+    .mt-12 { margin-top: 48px; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .flex-gap { display: flex; gap: 16px; flex-wrap: wrap; }
+    body.lang-en .flex-gap { justify-content: flex-start; }
+    body.lang-ar .flex-gap { justify-content: flex-start; }
+
+    /* ===== SECTION HEADING ===== */
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(37,99,235,0.08);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .section-dark .section-title { color: var(--white); }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--gray-600);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+    .section-dark .section-subtitle { color: rgba(255,255,255,0.72); }
+    .section-header { margin-bottom: 56px; }
+
+    /* ===== NAV ===== */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+      transition: box-shadow var(--transition);
+    }
+    .navbar.scrolled { box-shadow: 0 4px 24px rgba(15,31,61,0.10); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      gap: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .nav-logo-main {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .nav-logo-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--blue);
+      letter-spacing: 0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-600);
+      border-radius: 8px;
+      transition: all var(--transition);
+    }
+    .nav-links a:hover { color: var(--navy); background: var(--gray-100); }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .lang-toggle {
+      display: flex;
+      background: var(--gray-100);
+      border-radius: 50px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all var(--transition);
+      color: var(--gray-600);
+      font-family: inherit;
+    }
+    .lang-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(15,31,61,0.20);
+    }
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white) !important;
+      padding: 10px 20px !important;
+      border-radius: 50px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      transition: all var(--transition) !important;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--navy) !important; transform: translateY(-1px); }
+    .nav-mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .nav-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(135deg, rgba(240,249,255,0.98) 0%, rgba(224,242,254,0.88) 46%, rgba(248,250,252,0.98) 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(56,189,248,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(37,99,235,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 480px;
+      gap: 76px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 70px 0 76px;
+    }
+    body.lang-en .hero-grid { grid-template-columns: 480px minmax(0, 1fr); }
+    .hero-content {
+      max-width: 680px;
+      min-width: 0;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(37,99,235,0.18);
+      color: #1d4ed8;
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(37,99,235,0.08);
+    }
+    .hero-badge::before { content: '✦'; color: var(--gold); }
+    .hero-name {
+      font-size: clamp(42px, 6vw, 74px);
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: 0;
+    }
+    .hero-title {
+      font-size: clamp(18px, 2.6vw, 28px);
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 28px;
+      letter-spacing: 0;
+    }
+    .hero-desc {
+      font-size: 17px;
+      color: #475569;
+      line-height: 2;
+      max-width: 640px;
+      margin-bottom: 36px;
+      overflow-wrap: break-word;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      font-family: inherit;
+      white-space: nowrap;
+      text-decoration: none;
+      min-width: 0;
+    }
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+    }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.5); }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+    }
+    .btn-white:hover { background: var(--gray-100); transform: translateY(-2px); }
+    .btn-whatsapp {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+    .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+    .btn-outline-white {
+      background: rgba(255,255,255,0.8);
+      color: #0369a1;
+      border: 2px solid rgba(2,132,199,0.35);
+    }
+    .btn-outline-white:hover { border-color: #0284c7; background: #fff; box-shadow: 0 4px 16px rgba(2,132,199,0.15); }
+
+    /* Hero Image */
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+    }
+    body.lang-en .hero-image-wrap { order: -1; }
+    .hero-photo-frame {
+      position: relative;
+      width: min(100%, 460px);
+      isolation: isolate;
+    }
+    .hero-photo-bg {
+      position: absolute;
+      inset: 24px 18px auto auto;
+      width: 78%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, rgba(37,99,235,0.14), rgba(14,165,233,0.18));
+      border-radius: 32px;
+      transform: rotate(5deg);
+      filter: blur(0.2px);
+      z-index: -1;
+    }
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1.05;
+      border-radius: 28px;
+      border: 1px solid rgba(37,99,235,0.16);
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(239,246,255,0.96) 100%);
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(15,31,61,0.16);
+    }
+    .hero-photo svg {
+      width: 100%;
+      height: 100%;
+      padding: 24px;
+    }
+    .hero-stat-cards {
+      position: relative;
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .hero-stat {
+      flex: 1;
+      background: rgba(255,255,255,0.86);
+      border: 1px solid rgba(37,99,235,0.12);
+      border-radius: 14px;
+      padding: 14px 12px;
+      box-shadow: 0 12px 34px rgba(15,31,61,0.10);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+    .hero-stat-num { font-size: 22px; font-weight: 800; color: var(--blue); line-height: 1; }
+    .hero-stat-label { font-size: 11px; color: var(--gray-600); margin-top: 6px; font-weight: 700; line-height: 1.4; }
+
+    /* ===== ABOUT ===== */
+    .about-text {
+      font-size: 17px;
+      line-height: 2;
+      color: var(--gray-600);
+    }
+    .about-text p + p { margin-top: 18px; }
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .highlight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 18px;
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+    }
+    .highlight-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .highlight-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .highlight-text span { font-size: 12px; color: var(--gray-600); }
+    .about-image-side {
+      position: relative;
+    }
+    .about-visual {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #0ea5e9 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+    }
+    .about-quote {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 32px;
+    }
+    .about-quote::before {
+      content: '"';
+      font-size: 80px;
+      color: var(--blue);
+      line-height: 1;
+      display: block;
+      margin-bottom: -20px;
+      font-family: Georgia, serif;
+    }
+    .about-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .metric { text-align: center; }
+    .metric-num { font-size: 32px; font-weight: 800; color: var(--accent); }
+    .metric-label { font-size: 13px; color: rgba(255,255,255,0.72); margin-top: 4px; }
+
+    /* ===== SERVICES ===== */
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      transform: scaleX(0);
+      transition: transform var(--transition);
+      transform-origin: right;
+    }
+    body.lang-en .service-card::before { transform-origin: left; }
+    .service-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(14,165,233,0.10));
+    }
+    .service-title-en {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .service-title-ar {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--gray-600);
+      line-height: 1.75;
+    }
+
+    /* ===== PROBLEMS ===== */
+    .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .problem-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all var(--transition);
+      border: 1px solid var(--gray-200);
+    }
+    .problem-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: rgba(37,99,235,0.3); }
+    .problem-icon { font-size: 32px; margin-bottom: 14px; }
+    .problem-title-ar { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .problem-title-en { font-size: 13px; color: var(--gray-600); font-weight: 500; }
+
+    /* ===== INDUSTRIES ===== */
+    .industry-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+    .industry-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 50px;
+      padding: 12px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .industry-chip:hover { border-color: var(--blue); background: rgba(37,99,235,0.04); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .industry-chip-icon { font-size: 20px; }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps-container { position: relative; }
+    .steps-line {
+      position: absolute;
+      top: 44px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--accent));
+      z-index: 0;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step-card {
+      text-align: center;
+      padding: 20px 12px;
+    }
+    .step-number {
+      width: 52px;
+      height: 52px;
+      background: var(--white);
+      border: 2.5px solid var(--blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--blue);
+      margin: 0 auto 20px;
+      box-shadow: 0 0 0 6px rgba(37,99,235,0.10);
+    }
+    .section-dark .step-number { background: var(--navy-light); }
+    .step-icon { font-size: 28px; margin-bottom: 14px; }
+    .step-title-ar { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .step-title-en { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+    /* ===== OUTCOMES ===== */
+    .outcome-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .outcome-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      text-align: center;
+      transition: all var(--transition);
+      backdrop-filter: blur(4px);
+    }
+    .outcome-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-4px); border-color: rgba(255,255,255,0.25); }
+    .outcome-icon { font-size: 32px; margin-bottom: 14px; }
+    .outcome-title-ar { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .outcome-title-en { font-size: 12px; color: rgba(255,255,255,0.60); }
+
+    /* ===== WHY RAHAF ===== */
+    .why-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .why-text { font-size: 17px; color: var(--gray-600); line-height: 1.9; }
+    .why-text p + p { margin-top: 18px; }
+    .why-points { list-style: none; }
+    .why-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 15px;
+      color: var(--gray-600);
+    }
+    .why-points li:last-child { border-bottom: none; }
+    .why-check {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .why-point-text strong { display: block; font-size: 15px; font-weight: 700; color: var(--navy); }
+    .why-point-text span { font-size: 13px; }
+
+    /* ===== CONTACT ===== */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info { }
+    .contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background: var(--gray-50);
+      border-radius: var(--radius);
+      border: 1px solid var(--gray-200);
+      margin-bottom: 16px;
+      transition: all var(--transition);
+    }
+    .contact-card:hover { border-color: var(--blue); box-shadow: var(--shadow); }
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .contact-card-label { font-size: 12px; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .contact-card-value { font-size: 16px; font-weight: 700; color: var(--navy); }
+
+    /* Form */
+    .contact-form {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .form-title { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+    .form-subtitle { font-size: 15px; color: var(--gray-600); margin-bottom: 28px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-full { grid-column: 1 / -1; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .form-input, .form-select, .form-textarea {
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: var(--gray-50);
+      transition: all var(--transition);
+      outline: none;
+      width: 100%;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.10);
+    }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-select { cursor: pointer; }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--blue), var(--accent));
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin-top: 8px;
+    }
+    .form-submit:hover { opacity: 0.92; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--gray-800);
+      color: rgba(255,255,255,0.80);
+      padding: 60px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .footer-brand-title { font-size: 13px; color: var(--accent); margin-bottom: 16px; font-weight: 500; }
+    .footer-desc { font-size: 14px; line-height: 1.8; }
+    .footer-col-title { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.65); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: rgba(255,255,255,0.45); flex-wrap: wrap; gap: 12px; }
+    .footer-bottom a { color: var(--accent); }
+
+    /* ===== LANGUAGE VISIBILITY ===== */
+    .ar-only { display: block; }
+    .en-only { display: none; }
+    body.lang-en .ar-only { display: none; }
+    body.lang-en .en-only { display: block; }
+    body.lang-ar .ar-only { display: block; }
+    body.lang-ar .en-only { display: none; }
+
+    /* Inline bilingual (always show both) */
+    .bilingual { display: flex; flex-direction: column; gap: 2px; }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      z-index: 999;
+      width: 48px;
+      height: 48px;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+    }
+    body.lang-ar .scroll-top { left: 28px; }
+    body.lang-en .scroll-top { right: 28px; }
+    .scroll-top:hover { background: var(--navy); transform: translateY(-3px); }
+    .scroll-top.visible { display: flex; }
+
+    /* ===== NOTIFICATION ===== */
+    .notification {
+      position: fixed;
+      top: 88px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: var(--green);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(16,185,129,0.35);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.4s;
+      pointer-events: none;
+    }
+    .notification.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .problem-grid { grid-template-columns: repeat(2, 1fr); }
+      .outcome-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps-line { display: none; }
+      .hero { min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; padding: 54px 0 64px; }
+      body.lang-en .hero-grid { grid-template-columns: 1fr; }
+      .hero-image-wrap { order: -1; }
+      body.lang-en .hero-image-wrap { order: unset; }
+      .hero-photo-frame { width: min(100%, 420px); height: auto; }
+      .hero-content { max-width: 100%; }
+      .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+      .why-content { grid-template-columns: 1fr; gap: 40px; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .problem-grid { grid-template-columns: repeat(2, 1fr); }
+      .outcome-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-highlights { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nav-inner { gap: 12px; }
+      .nav-logo,
+      .nav-actions { min-width: 0; }
+      .nav-actions { gap: 8px; flex-shrink: 0; }
+      .nav-logo-main { font-size: 16px; }
+      .nav-logo-sub { display: none; }
+      .nav-cta { padding: 9px 16px !important; font-size: 12px !important; }
+      .lang-btn { padding: 5px 10px; }
+      .nav-links { display: none; }
+      .nav-mobile-toggle { display: flex; }
+      .hero-content { text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+      .hero-image-wrap { order: 0; }
+      body.lang-en .hero-image-wrap { order: 0; }
+      .hero-stat-cards { display: grid; grid-template-columns: repeat(3, 1fr); }
+      .hero-stat { padding: 12px 8px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .problem-grid { grid-template-columns: 1fr; }
+      .outcome-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 32px; padding: 40px 0 56px; }
+      .hero-grid { justify-items: center; }
+      .hero-content,
+      .hero-photo-frame,
+      .nav-inner { width: calc(100vw - 48px); max-width: calc(100vw - 48px); }
+      .hero-badge { font-size: 12px; padding: 8px 14px; }
+      .hero-name { font-size: clamp(34px, 11vw, 44px); }
+      .hero-title { font-size: 19px; }
+      .hero-desc { font-size: 15px; margin-bottom: 28px; }
+      .nav-cta { display: none !important; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { justify-content: center; width: 100%; white-space: normal; text-align: center; }
+      .hero-photo svg { padding: 16px; }
+      .hero-stat-cards { grid-template-columns: repeat(3, 1fr); }
+      .hero-stat-num { font-size: 19px; }
+      .hero-stat-label { font-size: 10px; }
+      .contact-form { padding: 24px; }
+    }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 16px 24px;
+      z-index: 999;
+      box-shadow: 0 8px 32px rgba(15,31,61,0.12);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .mobile-nav a {
+      display: block;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-600);
+      border-radius: 10px;
+      transition: all var(--transition);
+    }
+    .mobile-nav a:hover { color: var(--navy); background: var(--gray-100); }
+  </style>
+</head>
+<body class="lang-ar">
+
+<!-- NOTIFICATION -->
+<div class="notification" id="notification"></div>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="nav-logo-main ar-only">رهف السيابية</span>
+        <span class="nav-logo-main en-only">Rahaf Al Siyabi</span>
+        <span class="nav-logo-sub ar-only">شريك تطوير الأعمال</span>
+        <span class="nav-logo-sub en-only">Business Development Partner</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="ar-only">من أنا</a><a href="#about" class="en-only">About</a></li>
+        <li><a href="#services" class="ar-only">الخدمات</a><a href="#services" class="en-only">Services</a></li>
+        <li><a href="#how" class="ar-only">طريقة العمل</a><a href="#how" class="en-only">How It Works</a></li>
+        <li><a href="#contact" class="ar-only">تواصل</a><a href="#contact" class="en-only">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">عربي</button>
+          <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-primary nav-cta ar-only">احجز جلسة</a>
+        <a href="#contact" class="btn btn-primary nav-cta en-only">Book a Session</a>
+        <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#about" onclick="closeMobileNav()"><span class="ar-only">من أنا</span><span class="en-only">About</span></a></li>
+    <li><a href="#services" onclick="closeMobileNav()"><span class="ar-only">الخدمات</span><span class="en-only">Services</span></a></li>
+    <li><a href="#problems" onclick="closeMobileNav()"><span class="ar-only">المشاكل التي نحلها</span><span class="en-only">Problems We Solve</span></a></li>
+    <li><a href="#industries" onclick="closeMobileNav()"><span class="ar-only">القطاعات</span><span class="en-only">Industries</span></a></li>
+    <li><a href="#how" onclick="closeMobileNav()"><span class="ar-only">طريقة العمل</span><span class="en-only">How It Works</span></a></li>
+    <li><a href="#contact" onclick="closeMobileNav()"><span class="ar-only">تواصل</span><span class="en-only">Contact</span></a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-badge ar-only">شريك نمو الأعمال في سلطنة عمان</div>
+        <div class="hero-badge en-only">Business Growth Partner — Sultanate of Oman</div>
+
+        <h1 class="hero-name ar-only">رهف السيابية</h1>
+        <h1 class="hero-name en-only">Rahaf Al Siyabi</h1>
+        <p class="hero-title ar-only">شريك تطوير الأعمال ونمو الشركات</p>
+        <p class="hero-title en-only">Business Development &amp; Growth Partner</p>
+        <p class="hero-desc ar-only">
+          أساعد الشركات على تنظيم أعمالها، تطوير مبيعاتها، تحسين متابعة العملاء، وبناء أنظمة داخلية تدعم النمو المستدام وتحقق النتائج.
+        </p>
+        <p class="hero-desc en-only">
+          I help companies improve operations, increase sales, organize client follow-up, and build internal systems that support sustainable growth and deliver real results.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary ar-only">📅 احجز جلسة تطوير أعمال</a>
+          <a href="#contact" class="btn btn-primary en-only">📅 Book a Business Session</a>
+          <a href="https://wa.me/968" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="ar-only">تواصل عبر واتساب</span>
+            <span class="en-only">WhatsApp</span>
+          </a>
+          <a href="#services" class="btn btn-outline-white ar-only">استعرض الخدمات</a>
+          <a href="#services" class="btn btn-outline-white en-only">View Services</a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="hero-image-wrap">
+        <div class="hero-photo-frame">
+          <div class="hero-photo-bg"></div>
+          <div class="hero-photo">
+            <!-- Business Development Illustration -->
+            <svg viewBox="0 0 460 438" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="heroPanel" x1="65" y1="45" x2="400" y2="378" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#ffffff"/>
+                  <stop offset="1" stop-color="#e0f2fe"/>
+                </linearGradient>
+                <linearGradient id="heroChart" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop stop-color="#93c5fd"/>
+                  <stop offset="1" stop-color="#2563eb"/>
+                </linearGradient>
+                <filter id="heroSoftShadow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+                  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0f1f3d" flood-opacity="0.12"/>
+                </filter>
+              </defs>
+
+              <circle cx="94" cy="94" r="64" fill="#dbeafe" opacity="0.65"/>
+              <circle cx="394" cy="354" r="70" fill="#bae6fd" opacity="0.45"/>
+
+              <g filter="url(#heroSoftShadow)">
+                <rect x="54" y="48" width="352" height="286" rx="24" fill="url(#heroPanel)"/>
+                <rect x="54" y="48" width="352" height="286" rx="24" stroke="#bfdbfe" stroke-width="1.5"/>
+              </g>
+
+              <rect x="82" y="78" width="296" height="42" rx="14" fill="#eff6ff"/>
+              <circle cx="105" cy="99" r="7" fill="#2563eb"/>
+              <circle cx="127" cy="99" r="7" fill="#38bdf8"/>
+              <circle cx="149" cy="99" r="7" fill="#10b981"/>
+              <rect x="190" y="92" width="146" height="12" rx="6" fill="#cbd5e1"/>
+
+              <rect x="82" y="146" width="124" height="132" rx="18" fill="#ffffff" stroke="#dbeafe"/>
+              <rect x="104" y="246" width="20" height="32" rx="6" fill="#93c5fd"/>
+              <rect x="134" y="220" width="20" height="58" rx="6" fill="#60a5fa"/>
+              <rect x="164" y="188" width="20" height="90" rx="6" fill="url(#heroChart)"/>
+              <path d="M105 224C122 209 138 210 154 190C168 172 184 165 198 150" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="198" cy="150" r="8" fill="#10b981"/>
+
+              <rect x="226" y="146" width="152" height="132" rx="18" fill="#ffffff" stroke="#dbeafe"/>
+              <path d="M258 244C278 252 314 251 336 226C352 208 354 181 341 162" stroke="#e2e8f0" stroke-width="20" stroke-linecap="round"/>
+              <path d="M258 244C278 252 314 251 336 226" stroke="#2563eb" stroke-width="20" stroke-linecap="round"/>
+              <circle cx="302" cy="207" r="34" fill="#f8fafc" stroke="#dbeafe"/>
+              <path d="M287 207L298 218L318 194" stroke="#10b981" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <rect x="88" y="302" width="284" height="74" rx="20" fill="#0f1f3d"/>
+              <rect x="112" y="326" width="78" height="12" rx="6" fill="#60a5fa"/>
+              <rect x="112" y="350" width="48" height="8" rx="4" fill="#94a3b8"/>
+              <rect x="216" y="326" width="52" height="12" rx="6" fill="#10b981"/>
+              <rect x="216" y="350" width="72" height="8" rx="4" fill="#94a3b8"/>
+              <rect x="304" y="326" width="44" height="12" rx="6" fill="#fbbf24"/>
+              <rect x="304" y="350" width="34" height="8" rx="4" fill="#94a3b8"/>
+            </svg>
+          </div>
+
+          <div class="hero-stat-cards">
+            <div class="hero-stat">
+              <div class="hero-stat-num">+50</div>
+              <div class="hero-stat-label ar-only">شركة تم دعمها</div>
+              <div class="hero-stat-label en-only">Companies Supported</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">8+</div>
+              <div class="hero-stat-label ar-only">قطاعات أعمال</div>
+              <div class="hero-stat-label en-only">Business Sectors</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">100%</div>
+              <div class="hero-stat-label ar-only">حلول عملية</div>
+              <div class="hero-stat-label en-only">Practical Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="grid-2">
+      <!-- Text -->
+      <div>
+        <span class="section-label ar-only">من أنا</span>
+        <span class="section-label en-only">About</span>
+        <h2 class="section-title ar-only">مختصة في تطوير الأعمال والنمو المؤسسي</h2>
+        <h2 class="section-title en-only">Business Development & Growth Specialist</h2>
+
+        <div class="about-text ar-only">
+          <p>رهف السيابية مختصة في تطوير الأعمال وتحسين الأداء المؤسسي للشركات في سلطنة عمان. تتميز بقدرتها على تحليل الواقع الفعلي للشركات وتحديد الفجوات التشغيلية، وتحويل هذا التحليل إلى خطط عمل عملية وقابلة للتنفيذ.</p>
+          <p>تمتلك خبرة واسعة في مجالات تطوير المبيعات، إدارة علاقات العملاء، تصميم أنظمة المتابعة الداخلية، تنظيم التحصيل، ومراجعة الإيرادات والمصروفات. تعمل رهف مع الشركات كشريك فعلي، لا كاستشاري يقدم أفكاراً عامة، بل تنزل إلى تفاصيل العمل اليومي لبناء أنظمة تدوم وتُحقق نتائج ملموسة.</p>
+          <p>خبرتها تمتد عبر قطاعات متعددة: تقييم العقارات، المحاماة، المقاولات، الوساطة العقارية، الاستشارات، وخدمات الأعمال الصغيرة والمتوسطة — مما يمنحها رؤية شاملة تتجاوز نموذجاً واحداً للأعمال.</p>
+        </div>
+        <div class="about-text en-only">
+          <p>Rahaf Al Siyabi is a business development and operational performance specialist working with companies across the Sultanate of Oman. She excels at analyzing the real-world state of a business, identifying operational gaps, and translating that analysis into practical, executable action plans.</p>
+          <p>Her expertise spans sales development, client relationship management, internal follow-up systems, collection organization, and revenue and expense reviews. Rahaf works with businesses as a genuine partner — not a consultant who delivers generic advice — diving into the daily details to build systems that last and deliver measurable outcomes.</p>
+          <p>Her experience spans multiple sectors: real estate valuation, law firms, contracting, real estate brokerage, consulting, and small-to-medium service businesses — giving her a broad perspective that goes beyond any single business model.</p>
+        </div>
+
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <div class="highlight-icon">📊</div>
+            <div class="highlight-text">
+              <strong class="ar-only">تحليل الأداء</strong>
+              <strong class="en-only">Performance Analysis</strong>
+              <span class="ar-only">رؤية دقيقة للواقع الفعلي</span>
+              <span class="en-only">Clear view of actual performance</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🎯</div>
+            <div class="highlight-text">
+              <strong class="ar-only">حلول عملية</strong>
+              <strong class="en-only">Practical Solutions</strong>
+              <span class="ar-only">قابلة للتطبيق الفوري</span>
+              <span class="en-only">Immediately implementable</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🔄</div>
+            <div class="highlight-text">
+              <strong class="ar-only">أنظمة مستدامة</strong>
+              <strong class="en-only">Sustainable Systems</strong>
+              <span class="ar-only">تبقى بعد انتهاء العمل</span>
+              <span class="en-only">Outlast the engagement</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <div class="highlight-icon">🤝</div>
+            <div class="highlight-text">
+              <strong class="ar-only">شراكة حقيقية</strong>
+              <strong class="en-only">True Partnership</strong>
+              <span class="ar-only">نزول إلى تفاصيل العمل</span>
+              <span class="en-only">Deep into the details</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual -->
+      <div class="about-image-side">
+        <div class="about-visual">
+          <div class="about-quote ar-only">لا تحتاج الشركة إلى أفكار أكثر، بل تحتاج إلى نظام يُنفّذ الأفكار الصحيحة.</div>
+          <div class="about-quote en-only">Companies don't need more ideas — they need a system that executes the right ones.</div>
+          <div class="about-metrics">
+            <div class="metric">
+              <div class="metric-num">+50</div>
+              <div class="metric-label ar-only">شركة تم دعمها</div>
+              <div class="metric-label en-only">Companies Supported</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">8+</div>
+              <div class="metric-label ar-only">قطاعات أعمال</div>
+              <div class="metric-label en-only">Business Sectors</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">5+</div>
+              <div class="metric-label ar-only">سنوات خبرة</div>
+              <div class="metric-label en-only">Years Experience</div>
+            </div>
+            <div class="metric">
+              <div class="metric-num">100%</div>
+              <div class="metric-label ar-only">التزام بالنتائج</div>
+              <div class="metric-label en-only">Results Focused</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label ar-only">الخدمات</span>
+      <span class="section-label en-only">Services</span>
+      <h2 class="section-title ar-only">ما الذي تقدمه رهف لشركتك؟</h2>
+      <h2 class="section-title en-only">What Rahaf Offers Your Business</h2>
+      <p class="section-subtitle ar-only" style="margin:0 auto">خدمات متكاملة تغطي كل جوانب تطوير الأعمال وتحسين الأداء المؤسسي</p>
+      <p class="section-subtitle en-only" style="margin:0 auto">Comprehensive services covering every aspect of business development and operational improvement</p>
+    </div>
+
+    <div class="grid-3" style="grid-template-columns: repeat(4, 1fr);" id="servicesGrid">
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <div class="service-title-en">Business Development Strategy</div>
+        <div class="service-title-ar">استراتيجية تطوير الأعمال</div>
+        <p class="service-desc ar-only">بناء خطة عمل واضحة لتطوير الأعمال وتوسيع النطاق، بناءً على تحليل واقعي للشركة وأهدافها.</p>
+        <p class="service-desc en-only">Build a clear roadmap for business development and expansion, grounded in a realistic analysis of your company and its goals.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <div class="service-title-en">Sales Growth & Follow-Up</div>
+        <div class="service-title-ar">تطوير المبيعات والمتابعة</div>
+        <p class="service-desc ar-only">تصميم منظومة مبيعات فعّالة تشمل متابعة العملاء المحتملين، تحسين معدلات التحويل، وتقليل ضياع الفرص.</p>
+        <p class="service-desc en-only">Design an effective sales system covering lead follow-up, improving conversion rates, and minimizing lost opportunities.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <div class="service-title-en">Customer Journey Improvement</div>
+        <div class="service-title-ar">تحسين رحلة العميل</div>
+        <p class="service-desc ar-only">مراجعة كل نقاط تواصل العميل مع شركتك وتحسينها لضمان تجربة استثنائية تبني ولاء طويل الأمد.</p>
+        <p class="service-desc en-only">Review and improve every client touchpoint in your business to ensure an exceptional experience that builds long-term loyalty.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🗂️</div>
+        <div class="service-title-en">CRM & Client Tracking</div>
+        <div class="service-title-ar">نظام متابعة العملاء (CRM)</div>
+        <p class="service-desc ar-only">تصميم وتطبيق نظام متابعة العملاء والمعاملات يناسب حجم شركتك وطبيعة عملها.</p>
+        <p class="service-desc en-only">Design and implement a client and transaction tracking system tailored to your company's size and business nature.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title-en">Internal Workflow Systems</div>
+        <div class="service-title-ar">أنظمة العمل الداخلية</div>
+        <p class="service-desc ar-only">بناء أنظمة وإجراءات داخلية واضحة تقلل الفوضى، تحدد المسؤوليات، وتضمن سير العمل بانتظام.</p>
+        <p class="service-desc en-only">Build clear internal systems and procedures that reduce chaos, define responsibilities, and ensure consistent workflow.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💰</div>
+        <div class="service-title-en">Revenue, Expenses & Profitability Review</div>
+        <div class="service-title-ar">مراجعة الإيرادات والمصروفات والربحية</div>
+        <p class="service-desc ar-only">تحليل دقيق للإيرادات والمصروفات لتحديد مواطن الهدر وفرص تحسين الربحية.</p>
+        <p class="service-desc en-only">Detailed analysis of revenues and expenses to identify waste and opportunities for profitability improvement.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏦</div>
+        <div class="service-title-en">Collection & Payment Follow-Up</div>
+        <div class="service-title-ar">التحصيل ومتابعة المدفوعات</div>
+        <p class="service-desc ar-only">تصميم نظام تحصيل منظم يضمن متابعة المدفوعات المستحقة وتقليل المتأخرات بأسلوب احترافي.</p>
+        <p class="service-desc en-only">Design an organized collection system that ensures outstanding payments are followed up and overdue amounts are minimized professionally.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div class="service-title-en">Operational Improvement</div>
+        <div class="service-title-ar">تحسين العمليات التشغيلية</div>
+        <p class="service-desc ar-only">مراجعة شاملة للعمليات التشغيلية وتحسينها لرفع الكفاءة وتقليل التكاليف وتسريع الأداء.</p>
+        <p class="service-desc en-only">Comprehensive review and improvement of operational processes to increase efficiency, reduce costs, and accelerate performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEMS WE SOLVE ===== -->
+<section class="section" id="problems">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label ar-only">المشاكل التي نحلها</span>
+      <span class="section-label en-only">Problems We Solve</span>
+      <h2 class="section-title ar-only">هل تعاني شركتك من هذه التحديات؟</h2>
+      <h2 class="section-title en-only">Does Your Company Face These Challenges?</h2>
+      <p class="section-subtitle ar-only" style="margin:0 auto">رهف تساعد الشركات على تحويل هذه التحديات إلى فرص للنمو والتطوير</p>
+      <p class="section-subtitle en-only" style="margin:0 auto">Rahaf helps companies turn these challenges into growth and development opportunities</p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">📵</div>
+        <div class="problem-title-ar">ضعف متابعة العملاء</div>
+        <div class="problem-title-en">Weak Client Follow-Up</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <div class="problem-title-ar">ضياع الفرص البيعية</div>
+        <div class="problem-title-en">Lost Sales Opportunities</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">❓</div>
+        <div class="problem-title-ar">غموض الأرباح والمصاريف</div>
+        <div class="problem-title-en">Unclear Profits & Expenses</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔓</div>
+        <div class="problem-title-ar">غياب نظام التحصيل</div>
+        <div class="problem-title-en">No Collection System</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🌀</div>
+        <div class="problem-title-ar">فوضى المهام الداخلية</div>
+        <div class="problem-title-en">Internal Task Chaos</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <div class="problem-title-ar">تأخر الرد على العملاء</div>
+        <div class="problem-title-en">Slow Client Response</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📉</div>
+        <div class="problem-title-ar">غياب مؤشرات الأداء</div>
+        <div class="problem-title-en">No KPIs or Reports</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">👤</div>
+        <div class="problem-title-ar">الاعتماد على الأشخاص لا النظام</div>
+        <div class="problem-title-en">People-Dependent, Not System-Driven</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INDUSTRIES ===== -->
+<section class="section section-alt" id="industries">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label ar-only">القطاعات المستهدفة</span>
+      <span class="section-label en-only">Target Industries</span>
+      <h2 class="section-title ar-only">القطاعات التي نخدمها</h2>
+      <h2 class="section-title en-only">Industries We Serve</h2>
+      <p class="section-subtitle ar-only" style="margin:0 auto">خبرة متخصصة في القطاعات الأكثر نمواً في سلطنة عمان</p>
+      <p class="section-subtitle en-only" style="margin:0 auto">Specialized expertise in the fastest-growing sectors in the Sultanate of Oman</p>
+    </div>
+
+    <div class="industry-chips" style="justify-content: center;">
+      <div class="industry-chip"><span class="industry-chip-icon">🏢</span><span class="ar-only">شركات تقييم العقارات</span><span class="en-only">Real Estate Valuation Companies</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">⚖️</span><span class="ar-only">مكاتب المحاماة والقانون</span><span class="en-only">Law Firms</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">🏗️</span><span class="ar-only">شركات المقاولات</span><span class="en-only">Contracting Companies</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">🏠</span><span class="ar-only">الوساطة العقارية</span><span class="en-only">Real Estate Brokerage</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">💼</span><span class="ar-only">شركات الاستشارات</span><span class="en-only">Consulting Companies</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">🛎️</span><span class="ar-only">الشركات الخدمية</span><span class="en-only">Service Businesses</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">🏪</span><span class="ar-only">الشركات الصغيرة والمتوسطة</span><span class="en-only">SMEs</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">📋</span><span class="ar-only">شركات تحتاج أنظمة داخلية</span><span class="en-only">Companies Needing Internal Systems</span></div>
+      <div class="industry-chip"><span class="industry-chip-icon">💳</span><span class="ar-only">شركات تحتاج متابعة تحصيل</span><span class="en-only">Companies Needing Collection Follow-Up</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="section section-dark" id="how">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label" style="background:rgba(255,255,255,0.12);color:var(--accent);" class="ar-only">طريقة العمل</span>
+      <span class="section-label" style="background:rgba(255,255,255,0.12);color:var(--accent);" class="en-only">How It Works</span>
+      <h2 class="section-title ar-only">5 خطوات نحو تطوير أعمالك</h2>
+      <h2 class="section-title en-only">5 Steps Toward Business Growth</h2>
+      <p class="section-subtitle ar-only" style="margin:0 auto">منهجية واضحة ومجربة تضمن نتائج ملموسة لشركتك</p>
+      <p class="section-subtitle en-only" style="margin:0 auto">A clear, tested methodology that guarantees tangible results for your business</p>
+    </div>
+
+    <div class="steps-container">
+      <div class="steps-line"></div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">١</div>
+          <div class="step-icon">🔍</div>
+          <div class="step-title-ar">تقييم الأعمال</div>
+          <div class="step-title-en">Business Assessment</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">٢</div>
+          <div class="step-icon">🗺️</div>
+          <div class="step-title-ar">رسم خريطة فرص النمو</div>
+          <div class="step-title-en">Growth Opportunity Mapping</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">٣</div>
+          <div class="step-icon">📝</div>
+          <div class="step-title-ar">خطة عمل تطبيقية</div>
+          <div class="step-title-en">Practical Action Plan</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">٤</div>
+          <div class="step-icon">🔄</div>
+          <div class="step-title-ar">تصميم نظام المتابعة</div>
+          <div class="step-title-en">Follow-Up System Design</div>
+        </div>
+        <div class="step-card">
+          <div class="step-number">٥</div>
+          <div class="step-icon">📊</div>
+          <div class="step-title-ar">مراجعة الأداء</div>
+          <div class="step-title-en">Performance Review</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPECTED OUTCOMES ===== -->
+<section class="section section-alt" id="outcomes">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label ar-only">النتائج المتوقعة</span>
+      <span class="section-label en-only">Expected Outcomes</span>
+      <h2 class="section-title ar-only">ماذا ستحقق شركتك بعد العمل مع رهف؟</h2>
+      <h2 class="section-title en-only">What Will Your Company Achieve After Working with Rahaf?</h2>
+    </div>
+
+    <div class="outcome-grid" style="background: linear-gradient(135deg, #0369a1, #0ea5e9); border-radius: var(--radius-lg); padding: 48px; gap: 24px;">
+      <div class="outcome-card">
+        <div class="outcome-icon">📈</div>
+        <div class="outcome-title-ar">فرص مبيعات أكثر</div>
+        <div class="outcome-title-en">More Sales Opportunities</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">✅</div>
+        <div class="outcome-title-ar">متابعة عملاء أفضل</div>
+        <div class="outcome-title-en">Better Client Follow-Up</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">💡</div>
+        <div class="outcome-title-ar">وضوح الإيرادات والمصروفات</div>
+        <div class="outcome-title-en">Clearer Revenue & Expenses</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">🏦</div>
+        <div class="outcome-title-ar">تحصيل منظم</div>
+        <div class="outcome-title-en">Organized Collection</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">⭐</div>
+        <div class="outcome-title-ar">تجربة عميل أفضل</div>
+        <div class="outcome-title-en">Better Customer Experience</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">🚀</div>
+        <div class="outcome-title-ar">أداء فريق أعلى</div>
+        <div class="outcome-title-en">Improved Team Performance</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">🎯</div>
+        <div class="outcome-title-ar">مسؤوليات أوضح</div>
+        <div class="outcome-title-en">Clearer Responsibilities</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon">📊</div>
+        <div class="outcome-title-ar">تقارير تدعم القرار</div>
+        <div class="outcome-title-en">Better Decision-Making Reports</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY RAHAF ===== -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="why-content">
+      <div>
+        <span class="section-label ar-only">لماذا رهف؟</span>
+        <span class="section-label en-only">Why Rahaf?</span>
+        <h2 class="section-title ar-only">ليست استشارات، بل شراكة حقيقية في بناء نظام يعمل</h2>
+        <h2 class="section-title en-only">Not Just Consulting — A Real Partnership to Build a Working System</h2>
+
+        <div class="why-text ar-only">
+          <p>كثير من الاستشاريين يقدمون أفكاراً جميلة وتقارير مطوّلة، لكنها تبقى في الأدراج. رهف السيابية تعمل بطريقة مختلفة — تبدأ بفهم واقع شركتك فعلياً، تتعامل مع التفاصيل اليومية، وتبني معك نظاماً عملياً مناسباً لحجمك وطبيعة عملك.</p>
+          <p>النتيجة ليست خطة للقراءة، بل نظام يعمل، فريق يعرف مسؤولياته، وأرقام يمكن قراءتها واتخاذ القرار بناءً عليها.</p>
+        </div>
+        <div class="why-text en-only">
+          <p>Many consultants deliver beautiful ideas and lengthy reports that end up in drawers. Rahaf Al Siyabi works differently — she starts by genuinely understanding your company's reality, engages with daily details, and builds a practical system with you that fits your size and business nature.</p>
+          <p>The result is not a plan to read, but a system that works, a team that knows its responsibilities, and numbers that can be read and acted upon.</p>
+        </div>
+      </div>
+
+      <div>
+        <ul class="why-points">
+          <li>
+            <div class="why-check">✓</div>
+            <div class="why-point-text">
+              <strong class="ar-only">تحليل الواقع أولاً</strong>
+              <strong class="en-only">Reality-First Analysis</strong>
+              <span class="ar-only">لا نبني على افتراضات، بل على تقييم حقيقي لوضع شركتك الفعلي</span>
+              <span class="en-only">We don't build on assumptions — we start with a real assessment of your actual business state</span>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div class="why-point-text">
+              <strong class="ar-only">حلول مخصصة وليست نموذج جاهز</strong>
+              <strong class="en-only">Custom Solutions, Not Cookie-Cutter Templates</strong>
+              <span class="ar-only">كل شركة لها احتياجاتها — نصمم الحل بما يناسبك أنت</span>
+              <span class="en-only">Every company has unique needs — we design the solution that fits you specifically</span>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div class="why-point-text">
+              <strong class="ar-only">تطبيق عملي وليس مجرد توصيات</strong>
+              <strong class="en-only">Practical Implementation, Not Just Recommendations</strong>
+              <span class="ar-only">نعمل معك حتى يبدأ النظام بالعمل فعلياً</span>
+              <span class="en-only">We work with you until the system is actually running</span>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div class="why-point-text">
+              <strong class="ar-only">متابعة وقياس النتائج</strong>
+              <strong class="en-only">Follow-Up & Results Measurement</strong>
+              <span class="ar-only">نتابع الأداء ونقيس النتائج بمؤشرات واضحة وقابلة للقياس</span>
+              <span class="en-only">We monitor performance and measure results with clear, quantifiable indicators</span>
+            </div>
+          </li>
+          <li>
+            <div class="why-check">✓</div>
+            <div class="why-point-text">
+              <strong class="ar-only">خبرة عمانية في السوق المحلي</strong>
+              <strong class="en-only">Omani Expertise in the Local Market</strong>
+              <span class="ar-only">فهم عميق للسوق العماني وخصوصياته وتحدياته</span>
+              <span class="en-only">Deep understanding of the Omani market, its specifics and its challenges</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-header text-center-always">
+      <span class="section-label ar-only">تواصل معنا</span>
+      <span class="section-label en-only">Get In Touch</span>
+      <h2 class="section-title ar-only">احجز جلسة تطوير أعمال</h2>
+      <h2 class="section-title en-only">Book a Business Development Session</h2>
+      <p class="section-subtitle ar-only" style="margin:0 auto">أخبرنا عن شركتك وسنتواصل معك خلال 24 ساعة</p>
+      <p class="section-subtitle en-only" style="margin:0 auto">Tell us about your company and we'll get back to you within 24 hours</p>
+    </div>
+
+    <div class="contact-wrap">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-card-icon">📱</div>
+          <div>
+            <div class="contact-card-label ar-only">واتساب</div>
+            <div class="contact-card-label en-only">WhatsApp</div>
+            <div class="contact-card-value">
+              <a href="https://wa.me/968" style="color:var(--navy);">+968 XXXX XXXX</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📧</div>
+          <div>
+            <div class="contact-card-label ar-only">البريد الإلكتروني</div>
+            <div class="contact-card-label en-only">Email</div>
+            <div class="contact-card-value">info@rahafalsiyabi.com</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🌍</div>
+          <div>
+            <div class="contact-card-label ar-only">الموقع</div>
+            <div class="contact-card-label en-only">Location</div>
+            <div class="contact-card-value ar-only">مسقط، سلطنة عمان</div>
+            <div class="contact-card-value en-only">Muscat, Sultanate of Oman</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">⏱️</div>
+          <div>
+            <div class="contact-card-label ar-only">وقت الاستجابة</div>
+            <div class="contact-card-label en-only">Response Time</div>
+            <div class="contact-card-value ar-only">خلال 24 ساعة</div>
+            <div class="contact-card-value en-only">Within 24 Hours</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 28px; padding: 24px; background: linear-gradient(135deg, #0369a1, #0ea5e9); border-radius: var(--radius-lg); color: white;">
+          <p style="font-size: 16px; font-weight: 700; margin-bottom: 8px;" class="ar-only">🎯 الجلسة الأولى مجانية</p>
+          <p style="font-size: 16px; font-weight: 700; margin-bottom: 8px;" class="en-only">🎯 First Session is Free</p>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7;" class="ar-only">نبدأ بجلسة تشخيصية مجانية نحدد فيها أهم فرص التطوير في شركتك.</p>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7;" class="en-only">We start with a free diagnostic session to identify your company's most important development opportunities.</p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form">
+        <h3 class="form-title ar-only">أرسل طلبك الآن</h3>
+        <h3 class="form-title en-only">Send Your Request Now</h3>
+        <p class="form-subtitle ar-only">أخبرنا عن شركتك واحتياجاتك وسنتواصل معك قريباً</p>
+        <p class="form-subtitle en-only">Tell us about your company and needs and we'll be in touch soon</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label ar-only">اسم الشركة *</label>
+              <label class="form-label en-only">Company Name *</label>
+              <input type="text" class="form-input" id="companyName" required placeholder="" />
+            </div>
+            <div class="form-group">
+              <label class="form-label ar-only">اسم المسؤول *</label>
+              <label class="form-label en-only">Contact Person *</label>
+              <input type="text" class="form-input" id="contactPerson" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label ar-only">رقم الهاتف *</label>
+              <label class="form-label en-only">Phone Number *</label>
+              <input type="tel" class="form-input" id="phone" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label ar-only">البريد الإلكتروني</label>
+              <label class="form-label en-only">Email Address</label>
+              <input type="email" class="form-input" id="email" />
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label ar-only">النشاط التجاري *</label>
+              <label class="form-label en-only">Business Activity *</label>
+              <select class="form-select" id="businessType" required>
+                <option value="" class="ar-only">اختر النشاط...</option>
+                <option value="" class="en-only">Select activity...</option>
+                <option value="real_estate_val" class="ar-only">تقييم العقارات</option>
+                <option value="real_estate_val" class="en-only">Real Estate Valuation</option>
+                <option value="law" class="ar-only">محاماة وقانون</option>
+                <option value="law" class="en-only">Law Firm</option>
+                <option value="contracting" class="ar-only">مقاولات</option>
+                <option value="contracting" class="en-only">Contracting</option>
+                <option value="brokerage" class="ar-only">وساطة عقارية</option>
+                <option value="brokerage" class="en-only">Real Estate Brokerage</option>
+                <option value="consulting" class="ar-only">استشارات</option>
+                <option value="consulting" class="en-only">Consulting</option>
+                <option value="services" class="ar-only">خدمات أعمال</option>
+                <option value="services" class="en-only">Service Business</option>
+                <option value="sme" class="ar-only">شركة صغيرة أو متوسطة</option>
+                <option value="sme" class="en-only">SME</option>
+                <option value="other" class="ar-only">أخرى</option>
+                <option value="other" class="en-only">Other</option>
+              </select>
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label ar-only">التحدي الحالي الذي تواجهه</label>
+              <label class="form-label en-only">Current Challenge You're Facing</label>
+              <textarea class="form-textarea" id="challenge" rows="3"></textarea>
+            </div>
+            <div class="form-group form-full">
+              <label class="form-label ar-only">الخدمة المطلوبة</label>
+              <label class="form-label en-only">Required Service</label>
+              <select class="form-select" id="service">
+                <option value="" class="ar-only">اختر الخدمة...</option>
+                <option value="" class="en-only">Select service...</option>
+                <option value="bd" class="ar-only">استراتيجية تطوير الأعمال</option>
+                <option value="bd" class="en-only">Business Development Strategy</option>
+                <option value="sales" class="ar-only">تطوير المبيعات</option>
+                <option value="sales" class="en-only">Sales Growth</option>
+                <option value="crm" class="ar-only">نظام متابعة العملاء</option>
+                <option value="crm" class="en-only">CRM & Client Tracking</option>
+                <option value="collection" class="ar-only">التحصيل ومتابعة المدفوعات</option>
+                <option value="collection" class="en-only">Collection Follow-Up</option>
+                <option value="operations" class="ar-only">تحسين العمليات</option>
+                <option value="operations" class="en-only">Operational Improvement</option>
+                <option value="financial" class="ar-only">مراجعة الإيرادات والمصروفات</option>
+                <option value="financial" class="en-only">Revenue & Expense Review</option>
+                <option value="all" class="ar-only">جميع الخدمات / أحتاج تقييم</option>
+                <option value="all" class="en-only">All Services / Need Assessment</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">
+            <span class="ar-only">📤 إرسال الطلب — سنتواصل معك خلال 24 ساعة</span>
+            <span class="en-only">📤 Send Request — We'll contact you within 24 hours</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name ar-only">رهف السيابية</div>
+        <div class="footer-brand-name en-only">Rahaf Al Siyabi</div>
+        <div class="footer-brand-title ar-only">شريك تطوير الأعمال ونمو الشركات</div>
+        <div class="footer-brand-title en-only">Business Development & Growth Partner</div>
+        <p class="footer-desc ar-only">أساعد الشركات في سلطنة عمان على بناء أنظمة عمل فعّالة تدعم النمو وتحقق نتائج ملموسة.</p>
+        <p class="footer-desc en-only">Helping companies in the Sultanate of Oman build effective work systems that support growth and deliver tangible results.</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title ar-only">روابط سريعة</h4>
+        <h4 class="footer-col-title en-only">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about" class="ar-only">من أنا</a><a href="#about" class="en-only">About</a></li>
+          <li><a href="#services" class="ar-only">الخدمات</a><a href="#services" class="en-only">Services</a></li>
+          <li><a href="#problems" class="ar-only">المشاكل التي نحلها</a><a href="#problems" class="en-only">Problems We Solve</a></li>
+          <li><a href="#industries" class="ar-only">القطاعات</a><a href="#industries" class="en-only">Industries</a></li>
+          <li><a href="#how" class="ar-only">طريقة العمل</a><a href="#how" class="en-only">How It Works</a></li>
+          <li><a href="#contact" class="ar-only">تواصل معنا</a><a href="#contact" class="en-only">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-col-title ar-only">الخدمات الرئيسية</h4>
+        <h4 class="footer-col-title en-only">Main Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services" class="ar-only">تطوير الأعمال</a><a href="#services" class="en-only">Business Development</a></li>
+          <li><a href="#services" class="ar-only">تطوير المبيعات</a><a href="#services" class="en-only">Sales Growth</a></li>
+          <li><a href="#services" class="ar-only">متابعة العملاء</a><a href="#services" class="en-only">Client Follow-Up</a></li>
+          <li><a href="#services" class="ar-only">التحصيل</a><a href="#services" class="en-only">Collection Systems</a></li>
+          <li><a href="#services" class="ar-only">الأنظمة الداخلية</a><a href="#services" class="en-only">Internal Systems</a></li>
+          <li><a href="#services" class="ar-only">تحسين العمليات</a><a href="#services" class="en-only">Operations Improvement</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="ar-only">© 2025 رهف السيابية. جميع الحقوق محفوظة.</span>
+      <span class="en-only">© 2025 Rahaf Al Siyabi. All rights reserved.</span>
+      <span class="ar-only">مسقط، سلطنة عمان 🇴🇲</span>
+      <span class="en-only">Muscat, Sultanate of Oman 🇴🇲</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+  // Language
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('rahaf-lang', lang);
+    // Update placeholder for select elements
+    updateSelectPlaceholders(lang);
+  }
+
+  function updateSelectPlaceholders(lang) {
+    const selects = document.querySelectorAll('.form-select');
+    selects.forEach(sel => {
+      const opts = sel.querySelectorAll('option[value=""]');
+      opts.forEach(opt => {
+        if (lang === 'ar') {
+          opt.textContent = opt.classList.contains('ar-only') ? opt.textContent : '';
+        }
+      });
+    });
+  }
+
+  // Init language
+  (function() {
+    const saved = localStorage.getItem('rahaf-lang') || 'ar';
+    setLang(saved);
+  })();
+
+  // Navbar scroll
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    const scrollBtn = document.getElementById('scrollTop');
+    if (window.scrollY > 60) {
+      nav.classList.add('scrolled');
+      scrollBtn.classList.add('visible');
+    } else {
+      nav.classList.remove('scrolled');
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  // Mobile nav
+  document.getElementById('mobileToggle').addEventListener('click', function() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  });
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    const lang = document.body.classList.contains('lang-ar') ? 'ar' : 'en';
+
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    btn.textContent = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+
+    setTimeout(() => {
+      showNotification(lang === 'ar'
+        ? '✅ تم إرسال طلبك بنجاح! سنتواصل معك خلال 24 ساعة.'
+        : '✅ Request sent successfully! We\'ll contact you within 24 hours.');
+      e.target.reset();
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.innerHTML = lang === 'ar'
+        ? '<span class="ar-only">📤 إرسال الطلب — سنتواصل معك خلال 24 ساعة</span>'
+        : '<span class="en-only">📤 Send Request — We\'ll contact you within 24 hours</span>';
+    }, 1400);
+  }
+
+  function showNotification(msg) {
+    const el = document.getElementById('notification');
+    el.textContent = msg;
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 4000);
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.service-card, .problem-card, .outcome-card, .industry-chip, .step-card, .highlight-item, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Services grid responsive
+  function adjustServicesGrid() {
+    const grid = document.getElementById('servicesGrid');
+    if (grid) {
+      if (window.innerWidth <= 768) {
+        grid.style.gridTemplateColumns = '1fr';
+      } else if (window.innerWidth <= 1024) {
+        grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+      } else {
+        grid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+      }
+    }
+  }
+  adjustServicesGrid();
+  window.addEventListener('resize', adjustServicesGrid);
+</script>
+
+</body>
+</html>
