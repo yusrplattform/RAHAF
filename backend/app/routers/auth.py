@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from ..database import get_db
 from ..models.user import User
@@ -9,14 +10,15 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 @router.post("/register", response_model=UserResponse)
 def register(user_data: UserCreate, db: Session = Depends(get_db)):
-    existing = db.query(User).filter(User.email == user_data.email).first()
+    normalized_email = user_data.email.strip().lower()
+    existing = db.query(User).filter(func.lower(User.email) == normalized_email).first()
     if existing:
         raise HTTPException(status_code=400, detail="البريد الإلكتروني مستخدم بالفعل")
 
     hashed_password = get_password_hash(user_data.password)
     user = User(
         name=user_data.name,
-        email=user_data.email,
+        email=normalized_email,
         hashed_password=hashed_password,
         role=user_data.role
     )
@@ -27,8 +29,10 @@ def register(user_data: UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/login", response_model=Token)
 def login(login_data: LoginRequest, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == login_data.email).first()
-    if not user or not verify_password(login_data.password, user.hashed_password):
+    normalized_email = login_data.email.strip().lower()
+    normalized_password = login_data.password.strip()
+    user = db.query(User).filter(func.lower(User.email) == normalized_email).first()
+    if not user or not verify_password(normalized_password, user.hashed_password):
         raise HTTPException(status_code=401, detail="بيانات الدخول غير صحيحة")
 
     if not user.is_active:

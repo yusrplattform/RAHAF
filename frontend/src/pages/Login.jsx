@@ -84,14 +84,20 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!email || !password) {
+    const normalizedEmail = email.trim().toLowerCase()
+    const normalizedPassword = password.trim()
+
+    if (!normalizedEmail || !normalizedPassword) {
       setError('يرجى إدخال البريد الإلكتروني وكلمة المرور')
       return
     }
     setLoading(true)
     setError('')
     try {
-      const res = await api.post('/auth/login', { email, password })
+      const res = await api.post('/auth/login', {
+        email: normalizedEmail,
+        password: normalizedPassword,
+      })
       const { access_token, user } = res.data
       login(access_token, user)
       toast.success(`مرحباً ${user.name || 'بك'} 👋`)
@@ -238,23 +244,6 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Hint */}
-          <div style={{
-            marginTop: 22,
-            padding: '12px 14px',
-            background: '#f0f9ff',
-            borderRadius: 10,
-            border: '1px solid #bae6fd',
-            fontSize: 12,
-            color: '#64748b',
-            lineHeight: 1.7,
-          }}>
-            <div style={{ fontWeight: 600, marginBottom: 4, color: '#0284c7' }}>
-              🔑 بيانات الدخول الافتراضية:
-            </div>
-            <div>البريد: <code style={{ background: '#e0f2fe', padding: '1px 6px', borderRadius: 4, color: '#0369a1' }}>owner@rahaf.com</code></div>
-            <div>كلمة المرور: <code style={{ background: '#e0f2fe', padding: '1px 6px', borderRadius: 4, color: '#0369a1' }}>admin123</code></div>
-          </div>
         </div>
       </div>
     </div>
