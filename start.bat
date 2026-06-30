@@ -72,8 +72,8 @@ echo   Backend:  http://localhost:8000
 echo   API Docs: http://localhost:8000/docs
 echo.
 echo Default login:
-echo   Email:    owner@rahaf.com
-echo   Password: admin123
+echo   Email:    rahaf@yusr.om
+echo   Password: 031098
 echo ============================================
 echo.
 

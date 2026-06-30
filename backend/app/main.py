@@ -58,17 +58,26 @@ def create_default_owner():
     from .database import SessionLocal
     from .models.user import User
     from .auth.jwt_handler import get_password_hash
+
+    default_email = "rahaf@yusr.om"
+    default_password = "031098"
+    legacy_email = "owner@rahaf.com"
+
     db = SessionLocal()
     try:
         owner = db.query(User).filter(User.role == "owner").first()
         if not owner:
             owner = User(
                 name="المالك",
-                email="owner@rahaf.com",
-                hashed_password=get_password_hash("admin123"),
+                email=default_email,
+                hashed_password=get_password_hash(default_password),
                 role="owner"
             )
             db.add(owner)
+            db.commit()
+        elif owner.email == legacy_email:
+            owner.email = default_email
+            owner.hashed_password = get_password_hash(default_password)
             db.commit()
     finally:
         db.close()

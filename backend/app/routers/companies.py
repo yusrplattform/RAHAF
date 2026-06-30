@@ -7,6 +7,8 @@ from ..models.company import Company
 from ..models.income import Income
 from ..models.expense import Expense
 from ..models.client import Client
+from ..models.task import Task
+from ..models.crm import Transaction
 from ..schemas.company import CompanyCreate, CompanyUpdate, CompanyResponse, CompanySummary
 from ..auth.jwt_handler import get_current_user
 
@@ -41,7 +43,6 @@ def ensure_default_services(db: Session):
 
 @router.get("", response_model=List[CompanySummary])
 def get_companies(db: Session = Depends(get_db), current_user = Depends(get_current_user)):
-    ensure_default_services(db)
     companies = db.query(Company).all()
     result = []
     for company in companies:
@@ -99,6 +100,21 @@ def delete_company(company_id: int, db: Session = Depends(get_db), current_user 
     company = db.query(Company).filter(Company.id == company_id).first()
     if not company:
         raise HTTPException(status_code=404, detail="الخدمة غير موجودة")
+
+    related_counts = {
+        "الدخل": db.query(func.count(Income.id)).filter(Income.company_id == company_id).scalar() or 0,
+        "المصروفات": db.query(func.count(Expense.id)).filter(Expense.company_id == company_id).scalar() or 0,
+        "العملاء": db.query(func.count(Client.id)).filter(Client.company_id == company_id).scalar() or 0,
+        "المهام": db.query(func.count(Task.id)).filter(Task.company_id == company_id).scalar() or 0,
+        "المعاملات": db.query(func.count(Transaction.id)).filter(Transaction.company_id == company_id).scalar() or 0,
+    }
+    used_by = [name for name, count in related_counts.items() if count]
+    if used_by:
+        raise HTTPException(
+            status_code=409,
+            detail=f"لا يمكن حذف الخدمة لأنها مرتبطة ببيانات في: {', '.join(used_by)}",
+        )
+
     db.delete(company)
     db.commit()
     return {"message": "تم الحذف بنجاح"}
